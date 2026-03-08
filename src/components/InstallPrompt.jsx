@@ -2,27 +2,51 @@ import { useEffect, useState } from "react"
 
 function InstallPrompt(){
 
-const [prompt,setPrompt] = useState(null)
+const [deferredPrompt,setDeferredPrompt] = useState(null)
+const [show,setShow] = useState(false)
 
 useEffect(()=>{
 
-window.addEventListener("beforeinstallprompt",(e)=>{
+if (window.matchMedia('(display-mode: standalone)').matches) {
+  return
+}
 
+const handler = (e)=>{
 e.preventDefault()
+setDeferredPrompt(e)
+setShow(true)
+}
 
-setPrompt(e)
+window.addEventListener("beforeinstallprompt",handler)
 
-})
+return ()=>{
+window.removeEventListener("beforeinstallprompt",handler)
+}
 
 },[])
 
-function install(){
+async function install(){
 
-prompt.prompt()
+if(!deferredPrompt) return
+
+deferredPrompt.prompt()
+
+const { outcome } = await deferredPrompt.userChoice
+
+if(outcome === "accepted"){
+console.log("App installed")
+}
+
+setDeferredPrompt(null)
+setShow(false)
 
 }
 
-if(!prompt) return null
+function close(){
+setShow(false)
+}
+
+if(!show) return null
 
 return(
 
@@ -30,7 +54,12 @@ return(
 
 <p>Install Quro App</p>
 
+<div>
+
 <button onClick={install}>Install</button>
+<button onClick={close}>Later</button>
+
+</div>
 
 </div>
 

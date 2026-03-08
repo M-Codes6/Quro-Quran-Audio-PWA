@@ -8,11 +8,10 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       manifest: {
-        name: "Quran & Nasheeds",
-        short_name: "QuranAudio",
-        theme_color: "#000000",
+        name: "Quro Quran Audio",
+        short_name: "Quro",
+        theme_color: "#d4af37",
         background_color: "#000000",
-        display: "standalone",
         start_url: "/",
         icons: [
           {

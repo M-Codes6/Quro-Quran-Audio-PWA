@@ -1,6 +1,12 @@
 {
-  "name": "Quro",
+  "name": "Quro Quran Audio",
   "short_name": "Quro",
+  "description": "Listen to Quran recitations and Islamic nasheeds",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#d4af37",
+  "orientation": "portrait",
   "icons": [
     {
       "src": "/quro-icon.png",
