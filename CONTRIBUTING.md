@@ -31,53 +31,45 @@ cd quro
 npm install
 npm run dev
 
-Creating a Pull Request
+>Creating a Pull Request
 
-Create a new branch
+>Create a new branch
+    git checkout -b feature-name
 
-git checkout -b feature-name
+>Make your changes
 
-Make your changes
+>Commit your changes
+    git commit -m "Add new feature"
 
-Commit your changes
+>Push your branch
+    git push origin feature-name
 
-git commit -m "Add new feature"
+>Open a Pull Request
 
-Push your branch
+## Adding Nasheeds
+  > Nasheeds are stored in:
+    src/data/nasheeds.js
 
-git push origin feature-name
-
-Open a Pull Request
-
-Adding Nasheeds
-
-Nasheeds are stored in:
-
-src/data/nasheeds.js
-
-Each entry should follow this format:
+## Each entry should follow this format:
 
 {
   id: 1,
   title: "Nasheed Name",
   url: "Audio URL"
 }
-Adding Qari Recitations
 
-Qari data is stored in:
-
-src/data/qaris.js
+## Adding Qari Recitations
+ > Qari data is stored in:
+    src/data/qaris.js
 
 Please follow the existing structure when adding new reciters.
 
-Code Style
+## Code Style
 
 Please keep the code:
-
 • simple
 • readable
 • consistent with the existing structure
-
 Respect the Purpose
 
 Quro is created as a Sadaqah Jariyah project.
