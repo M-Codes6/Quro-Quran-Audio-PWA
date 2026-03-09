@@ -128,6 +128,20 @@ setIsPlaying(false)
 
 }
 
+
+
+
+/* ---------- PLAY TRACK ---------- */
+
+function playTrack(list,index){
+
+const item = list[index]
+
+setPlaylist(list)
+setCurrentIndex(index)
+
+startAudio(item)
+
 /*  ----- Media Session ----- */
 
 if("mediaSession" in navigator) {
@@ -157,20 +171,7 @@ if("mediaSession" in navigator) {
     navigator.mediaSession.setActionHandler("nexttrack", nextTrack)
     navigator.mediaSession.setActionHandler("previoustrack",prevTrack)
 }
-
 }
-
-
-/* ---------- PLAY TRACK ---------- */
-
-function playTrack(list,index){
-
-const item = list[index]
-
-setPlaylist(list)
-setCurrentIndex(index)
-
-startAudio(item)
 
 
 
