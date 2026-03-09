@@ -1,5 +1,6 @@
 import { Routes, Route, useLocation } from "react-router-dom"
 import { useState } from "react"
+import { Analytics } from "@vercel/analytics/react"
 
 import Home from "./pages/Home"
 import Surahs from "./pages/Surahs"
@@ -47,6 +48,7 @@ return(
 <MiniPlayer/>
 <BottomNav/>
 <InstallPrompt/>
+<Analytics/>
 
 </>
 
