@@ -842,6 +842,37 @@ color:black;
 }
 
 
+
+
+/*----- Install Prompt Button ------*/
+
+.install-buttons{
+display:flex;
+gap:12px;
+margin-top:10px;
+justify-content:center;
+}
+
+.install-buttons button{
+padding:10px 16px;
+border-radius:8px;
+border:none;
+font-size:14px;
+cursor:pointer;
+}
+
+.install-buttons button:first-child{
+background:#d4af37;
+color:black;
+}
+
+.install-buttons button:last-child{
+background:#222;
+color:#fff;
+}
+
+
+
 /* ------ Media Queries ------ */
 
 
